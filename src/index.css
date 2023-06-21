@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@font-face {
+  font-family: 'Product Sans';
+  src: url('./Fonts/font.ttf');
+}
+*{
+  font-family: 'Product Sans';
+}
+.apexcharts-bar-area{
+  clip-path: inset(0% 0% 0% 0% round 8px);
+}
+body{
+  background-color:  #F8F8F8;
+}

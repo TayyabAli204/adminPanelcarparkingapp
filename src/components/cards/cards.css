@@ -1,0 +1,33 @@
+div.customWidth{
+    width: 249px;
+}
+div.differentCustomWidth{
+    width: 277px;
+}
+section.parent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width:1132px) {
+    div.customWidth{
+        width: 100%;
+    }
+    div.differentCustomWidth{
+        width: 100%;
+    }
+    section.parent{
+display: grid;
+grid-template-columns: repeat(2, 1fr); 
+grid-template-rows: repeat(2, 1fr); 
+    }
+}
+@media screen and (max-width:850px) {
+ 
+    section.parent{
+display: grid;
+grid-template-columns: repeat(1, 1fr); 
+grid-template-rows: repeat(4, 1fr); 
+    }
+}
