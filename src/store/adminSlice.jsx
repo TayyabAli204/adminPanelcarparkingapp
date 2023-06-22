@@ -7,6 +7,7 @@ const adminSlice = createSlice({
     showLoader:false,
     showError:false,
     parkingSlots: [],
+    selectedLocation:[]
   },
 
   reducers: {
@@ -23,17 +24,28 @@ const adminSlice = createSlice({
         state.parkingSlots=action.payload;
 
     }).addCase(getSlotsDataAsync.rejected,(state,action)=>{
-      console.log(action)
       state.showLoader=false
 
     })
-    builder.addCase(addLocationAsync.pending,(state,action)=>{
+    .addCase(addLocationAsync.pending,(state,action)=>{
       state.showLoader=true
 
     }).addCase(addLocationAsync.fulfilled,(state,action)=>{
       state.showLoader=false
 
     }).addCase(addLocationAsync.rejected,(state,action)=>{
+      state.showLoader=false
+
+    })
+    .addCase(getLocationDataAsync.pending,(state,action)=>{
+
+      state.showLoader=true
+
+    }).addCase(getLocationDataAsync.fulfilled,(state,action)=>{
+      state.showLoader=false
+      state.selectedLocation=action.payload
+
+    }).addCase(getLocationDataAsync.rejected,(state,action)=>{
       state.showLoader=false
 
     })
@@ -51,6 +63,12 @@ const data=await axios.post('http://localhost:8000/addLocation',{
 });
 console.log(data)
 return ;
+})
+export const getLocationDataAsync=createAsyncThunk('adminSlice/getLocationData', async(location,thunkAPI)=>{
+
+const {data}=await axios.get(`http://localhost:8000/parkingSlot/data/${location}`)
+console.log(data)
+return data.data ;
 })
 export default adminSlice.reducer;
 
