@@ -45,7 +45,7 @@ const ParkingSlots = () => {
       <div className="container mx-auto p-4">
         {parkingSlots?.map((item, index) => (
             <>
-              <h2 className="text-lg font-bold text-primary mb-2">{item.location}</h2>
+            <h2 className="text-lg font-bold text-primary mb-2">{item.location}</h2>
             <div className="bg-white w-full shadow-lg rounded-md flex justify-start  items-center gap-44  cursor-pointer text-black text-[16px] p-4 mb-4" key={index}>
             <p className="text-primary text-start mb-1"> {item.parkingLotName}</p>
             <p className="text-primary text-start mb-1">{item.booked ? 'Booked' : 'Not Booked'}</p>
