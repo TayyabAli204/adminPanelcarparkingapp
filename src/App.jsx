@@ -4,6 +4,7 @@ import Sidebar from "./components/sideBar/sidebar";
 import Dashboard from "./pages/Dashboard";
 import Booking from "./pages/Booking";
 import  AddLocation  from "./pages/AddLocation";
+import LocationDetail from "./pages/locationDetail";
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
         <Route path='/DashBoard' element={<Dashboard/>} />
         <Route path='/Booking' element={<Booking />} />
         <Route path='/AddLocation' element={<AddLocation />} />
+        <Route path='/location/:location' element={<LocationDetail />} />
 
         
       </Routes>
