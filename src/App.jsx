@@ -14,7 +14,7 @@ function App() {
       <Sidebar/>
         <div className="md:ml-[273px] !p-[25px]">
       <Routes>
-
+      <Route path='/' element={<Dashboard/>} />
         <Route path='/DashBoard' element={<Dashboard/>} />
         <Route path='/Booking' element={<Booking />} />
         <Route path='/AddLocation' element={<AddLocation />} />

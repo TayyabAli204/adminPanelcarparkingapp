@@ -54,20 +54,23 @@ const adminSlice = createSlice({
 export const {setParkingSlotData} = adminSlice.actions;
 export const getSlotsDataAsync=createAsyncThunk('adminSlice/slotsData', async(state,thunkAPI)=>{
   const {data}=await axios.get('http://localhost:8000/parkingSlot');
+  // console.log(data)
   return data;
 })
+
+
 export const addLocationAsync=createAsyncThunk('adminSlice/addLocation', async(dispatchedData,thunkAPI)=>{
 
 const data=await axios.post('http://localhost:8000/addLocation',{
   location:dispatchedData
 });
-console.log(data)
+// console.log(data)
 return ;
 })
 export const getLocationDataAsync=createAsyncThunk('adminSlice/getLocationData', async(location,thunkAPI)=>{
 
 const {data}=await axios.get(`http://localhost:8000/parkingSlot/data/${location}`)
-console.log(data)
+// console.log(data)
 return data.data ;
 })
 export default adminSlice.reducer;
@@ -75,3 +78,4 @@ export default adminSlice.reducer;
   // const {data}=await axios.post('http://192.168.50.65:8000/parkingSlot',
   // );
   // return data;
+

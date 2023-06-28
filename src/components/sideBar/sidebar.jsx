@@ -14,7 +14,7 @@ import Nav from "../nav/nav";
 import { Link } from "react-router-dom";
 const sidebar = () => {
   const [sidebar, setSidebar] = useState(true);
-  const [activeItem, setActiveItem] = useState(0);
+  const [activeItem, setActiveItem] = useState('');
 
   const handleClick = (index) => {
     setActiveItem(index);
@@ -93,8 +93,8 @@ const sidebar = () => {
                   activeItem === index
                     ? "text-white bg-[#5932EA]"
                     : "text-black"
-                } hover:bg-[#5932EA] hover:text-white rounded-lg dark:hover:bg-[#5932EA]`}
-                onClick={() => handleClick(index)}
+                }  rounded-lg `}
+                onClick={() => handleClick(index)}  
               >
                 <img src={item.icon} alt="" />
                 <span className="ml-3 font-bold text-[1.1875rem]">
