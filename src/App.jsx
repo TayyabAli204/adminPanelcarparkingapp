@@ -33,6 +33,7 @@ import Booking from "./pages/Booking";
 import AddLocation from "./pages/AddLocation";
 import LocationDetail from "./pages/locationDetail";
 import Payments from "./pages/Payments";
+import ParkingSpaceOverView from "./pages/ParkingSpaceOverView";
 import { Provider } from "react-redux";
 import store from "./store/store";
 import Login from "./pages/Login";
@@ -60,7 +61,7 @@ const App = () => {
                   <Route path="/Booking" element={<Booking />} />
                   <Route path="/AddLocation" element={<AddLocation />} />
                   <Route path="/Payments" element={<Payments />} />
-
+                  <Route path="/ParkingSpaceOverView" element={<ParkingSpaceOverView/>}/>
                   <Route path="/location/:location" element={<LocationDetail />} />
                 </Routes>
               </div>

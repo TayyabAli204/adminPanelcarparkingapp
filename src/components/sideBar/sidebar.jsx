@@ -24,8 +24,10 @@ const sidebar = () => {
     { icon: svg1, text: "Dashboard", link: "/DashBoard" },
     { icon: svg6, text: "Booking", link: "/Booking" },
     { icon: svg11, text: "Add Location", link: "/AddLocation" },
+    { icon: svg6, text: "ParkingOverView", link: "/ParkingSpaceOverView" },
     { icon: svg5, text: "Payments", link: "/Payments" },
     { icon: svg7, text: "Profile", link: "/Profile" },
+
   ];
 
   return (

@@ -1,7 +1,6 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import axios from 'axios';
-import ToastMassage from '../components/ToastMassage';
-import { ToastContainer, toast } from "react-toastify";
+import {  toast } from "react-toastify";
 
 const adminSlice = createSlice({
   name: 'adminSlice',
@@ -67,8 +66,8 @@ try {
     location:dispatchedData
   });
   toast.success('Successfully added')
-  
-  return ;
+
+  return data ;
 } catch (error) {
   console.log(error);
   toast.error('something went wrong')
