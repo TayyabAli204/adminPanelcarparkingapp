@@ -24,13 +24,8 @@ const sidebar = () => {
     { icon: svg1, text: "Dashboard", link: "/DashBoard" },
     { icon: svg6, text: "Booking", link: "/Booking" },
     { icon: svg11, text: "Add Location", link: "/AddLocation" },
-    { icon: svg4, text: "Transfer Schedule", link: "/TransferSchedule" },
-    { icon: svg8, text: "Service Schedule", link: "/ServiceSchedule" },
-    {  icon: svg5,text: "Parking Space Overview", link: "/ParkingSpaceOverview" },
     { icon: svg5, text: "Payments", link: "/Payments" },
     { icon: svg7, text: "Profile", link: "/Profile" },
-    { icon: svg9, text: "Settings", link: "/Settings" },
-    { icon: svg9, text: "Settings", link: "/Settings" },
   ];
 
   return (
@@ -87,6 +82,7 @@ const sidebar = () => {
         <div className="py-4 overflow-y-auto font-bold text-[1.1875rem]">
           <ul className="flex flex-col gap-10">
             {menuItems.map((item, index) => (
+              <Link to={item.link}>
               <li
                 key={index}
                 className={`flex items-center cursor-pointer p-2 text-base font-normal ${
@@ -96,14 +92,18 @@ const sidebar = () => {
                 }  rounded-lg `}
                 onClick={() => handleClick(index)}  
               >
+                  
                 <img src={item.icon} alt="" />
                 <span className="ml-3 font-bold text-[1.1875rem]">
-                  <Link to={item.link}>{item.text}</Link>
+                    {item.text}
                 </span>
+                
+                    
                 {activeItem === index && (
                   <div className="bg-[#5932EA] w-[6px] h-[40px] absolute left-0 rounded-tr-lg rounded-br-lg"></div>
                 )}
               </li>
+              </Link>
             ))}
           </ul>
         </div>

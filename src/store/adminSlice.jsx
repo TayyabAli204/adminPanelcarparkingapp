@@ -1,5 +1,7 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import axios from 'axios';
+import ToastMassage from '../components/ToastMassage';
+import { ToastContainer, toast } from "react-toastify";
 
 const adminSlice = createSlice({
   name: 'adminSlice',
@@ -53,23 +55,29 @@ const adminSlice = createSlice({
 });
 export const {setParkingSlotData} = adminSlice.actions;
 export const getSlotsDataAsync=createAsyncThunk('adminSlice/slotsData', async(state,thunkAPI)=>{
-  const {data}=await axios.get('http://localhost:8000/parkingSlot');
+  const {data}=await axios.get('https://long-jade-wasp-robe.cyclic.app/parkingSlot');
   // console.log(data)
   return data;
 })
 
 
 export const addLocationAsync=createAsyncThunk('adminSlice/addLocation', async(dispatchedData,thunkAPI)=>{
+try { 
+  const data=await axios.post('https://long-jade-wasp-robe.cyclic.app/addLocation',{
+    location:dispatchedData
+  });
+  toast.success('Successfully added')
+  
+  return ;
+} catch (error) {
+  console.log(error);
+  toast.error('something went wrong')
 
-const data=await axios.post('http://localhost:8000/addLocation',{
-  location:dispatchedData
-});
-// console.log(data)
-return ;
+}
 })
 export const getLocationDataAsync=createAsyncThunk('adminSlice/getLocationData', async(location,thunkAPI)=>{
 
-const {data}=await axios.get(`http://localhost:8000/parkingSlot/data/${location}`)
+const {data}=await axios.get(`https://long-jade-wasp-robe.cyclic.app/parkingSlot/data/${location}`)
 // console.log(data)
 return data.data ;
 })

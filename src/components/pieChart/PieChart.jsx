@@ -24,7 +24,7 @@ export default () => {
       <div className="row h-full   ">
         <div className="py-[20px]  h-full px-[27px] flex flex-col justify-center items-center relative">
           <p className="self-start pb-[19px] font-bold text-[20px] whitespace-nowrap">
-            Employee Composition
+            Users Composition
           </p>
           <div className=" relative ">
             <Chart

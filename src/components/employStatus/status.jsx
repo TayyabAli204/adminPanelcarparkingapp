@@ -30,7 +30,7 @@ export default () => {
       >
         <div className="flex justify-between  w-full pb-[24px]   ">
           <p className=" whitespace-nowrap sm:text-[20px] font-bold ">
-            Employee Status
+            Users Status
           </p>
           <div className="text-[#1A2B88]  text-[12px] w-[131px] flex justify-center items-center rounded-[10px] bg-[#F7F7F7] font-bold gap-[11px]">
             Filter & Short <img src={img5} alt="" />{" "}
@@ -40,7 +40,7 @@ export default () => {
           <ul className=" flex   ">
             <ul className="">
               <li className="text-[#949494] text-[14.5px] border-b-[1.81193px] pb-[14px] whitespace-nowrap">
-                Employee Name
+                User Name
               </li>
               <ul className="pt-[18px] mr-[72px]">
                 {arr[0].employees.map((item) => {

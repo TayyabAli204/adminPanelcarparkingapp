@@ -18,7 +18,7 @@ export default function SimpleMap() {
       (position) => {
         const { latitude, longitude } = position.coords;
         setCurrentLocation({ lat: latitude, lng: longitude });
-        console.log(position, "Geolocation position");
+        console.log(position, "cuurent postion Geolocation position");
         setMarkers([...markers,{ lat: latitude, lng: longitude }])
       },
       (error) => {
@@ -167,26 +167,9 @@ export default function SimpleMap() {
     });
   }
  
-useEffect(()=>{
-setMarkers([...markers,distance])
-console.log(distance,markers,'use effect wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww',mapData);
 
-},[distance])
-
-useEffect(()=>{
-setTimeout(()=>{
-  if(mapData!==null){
-    let map=mapData.map;
-    let maps=mapData.maps
-    console.log('code chala');
-    renderMarkers({map,maps})
-  }
-  },1000)
-},[markers])
   return (
-    // Important! Always set the container height explicitly  
     <>
-      <SearchBar/>
     <div style={{ height: '70vh', width: '60%' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: import.meta.env.VITE_API_KEY }}
