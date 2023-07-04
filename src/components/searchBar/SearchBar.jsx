@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setDistance, setLocation } from "../../store/searchSlice";
+
+const Google_API_Key= import.meta.env.VITE_API_KEY;
+
 function SearchBar() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -35,7 +38,7 @@ function SearchBar() {
     }
 
     const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyB3OsCMn8ETqQzH9Mm94PAZUEpkKhWjWOw&libraries=places`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${Google_API_Key}&libraries=places`;
     script.async = true;
     script.defer = true;
     script.addEventListener("load", handleScriptLoad);

@@ -18,7 +18,6 @@ const AddLocation = () => {
   const handleClick = (buttonName) => {
     setActiveButton(buttonName);
   };
-
   return (
     <>
       <div className="container flex justify-around m-4 ">

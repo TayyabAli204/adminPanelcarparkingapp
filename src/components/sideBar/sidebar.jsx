@@ -12,9 +12,9 @@ import svg9 from "../../assets/sidebar/22.svg";
 import svg11 from "../../assets/sidebar/11.svg";
 import Nav from "../nav/nav";
 import { Link } from "react-router-dom";
-const sidebar = () => {
+const Sidebar = () => {
   const [sidebar, setSidebar] = useState(true);
-  const [activeItem, setActiveItem] = useState('');
+  const [activeItem, setActiveItem] = useState("");
 
   const handleClick = (index) => {
     setActiveItem(index);
@@ -27,12 +27,10 @@ const sidebar = () => {
     { icon: svg6, text: "ParkingOverView", link: "/ParkingSpaceOverView" },
     { icon: svg5, text: "Payments", link: "/Payments" },
     { icon: svg7, text: "Profile", link: "/Profile" },
-
   ];
 
   return (
     <div>
-      {/* passing a burger icon in nav  */}
       <Nav>
         <button
           onClick={() => setSidebar(!sidebar)}
@@ -80,31 +78,28 @@ const sidebar = () => {
           <img src={svg3} alt="" />
         </div>
 
-
         <div className="py-4 overflow-y-auto font-bold text-[1.1875rem]">
           <ul className="flex flex-col gap-10">
             {menuItems.map((item, index) => (
               <Link to={item.link}>
-              <li
-                key={index}
-                className={`flex items-center cursor-pointer p-2 text-base font-normal ${
-                  activeItem === index
-                    ? "text-white bg-[#5932EA]"
-                    : "text-black"
-                }  rounded-lg `}
-                onClick={() => handleClick(index)}  
-              >
-                  
-                <img src={item.icon} alt="" />
-                <span className="ml-3 font-bold text-[1.1875rem]">
-                    {item.text}
-                </span>
+                <li
                 
-                    
-                {activeItem === index && (
-                  <div className="bg-[#5932EA] w-[6px] h-[40px] absolute left-0 rounded-tr-lg rounded-br-lg"></div>
-                )}
-              </li>
+                  className={`flex items-center cursor-pointer p-2 text-base font-normal ${
+                    activeItem === index
+                      ? "text-white bg-[#5932EA]"
+                      : "text-black"
+                  }  rounded-lg `}
+                  onClick={() => handleClick(index)}
+                >
+                  <img src={item.icon} alt="" />
+                  <span className="ml-3 font-bold text-[1.1875rem]">
+                    {item.text}
+                  </span>
+
+                  {activeItem === index && (
+                    <div className="bg-[#5932EA] w-[6px] h-[40px] absolute left-0 rounded-tr-lg rounded-br-lg"></div>
+                  )}
+                </li>
               </Link>
             ))}
           </ul>
@@ -115,4 +110,4 @@ const sidebar = () => {
   );
 };
 
-export default sidebar;
+export default Sidebar;

@@ -27,6 +27,7 @@
 
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import Sidebar from "./components/sideBar/sidebar";
 import Sidebar from "./components/sideBar/sidebar";
 import Dashboard from "./pages/Dashboard";
 import Booking from "./pages/Booking";
