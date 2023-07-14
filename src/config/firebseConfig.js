@@ -2,8 +2,9 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore"
 import { getAuth } from "firebase/auth";
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCPtzAMmW4kz8GLLnFpebpe-HTBmJvKzlQ",
+  apiKey: import.meta.env.VITE_FIREBASE_KEY,
   authDomain: "carparking-7db82.firebaseapp.com",
   projectId: "carparking-7db82",
   storageBucket: "carparking-7db82.appspot.com",
