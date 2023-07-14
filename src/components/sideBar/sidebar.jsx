@@ -1,14 +1,8 @@
 import React, { useState } from "react";
-
 import svg1 from "../../assets/sidebar/1.svg";
 import svg2 from "../../assets/sidebar/2.svg";
 import svg3 from "../../assets/sidebar/3.svg";
-import svg4 from "../../assets/sidebar/4.svg";
-import svg5 from "../../assets/sidebar/5.svg";
 import svg6 from "../../assets/sidebar/6.svg";
-import svg7 from "../../assets/sidebar/7.svg";
-import svg8 from "../../assets/sidebar/33.svg";
-import svg9 from "../../assets/sidebar/22.svg";
 import svg11 from "../../assets/sidebar/11.svg";
 import Nav from "../nav/nav";
 import { Link } from "react-router-dom";
@@ -25,8 +19,6 @@ const Sidebar = () => {
     { icon: svg6, text: "Booking", link: "/Booking" },
     { icon: svg11, text: "Add Location", link: "/AddLocation" },
     { icon: svg6, text: "ParkingOverView", link: "/ParkingSpaceOverView" },
-    { icon: svg5, text: "Payments", link: "/Payments" },
-    { icon: svg7, text: "Profile", link: "/Profile" },
   ];
 
   return (

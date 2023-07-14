@@ -9,11 +9,9 @@ export default function SimpleMap() {
       (position) => {
         const { latitude, longitude } = position.coords;
         setCurrentLocation({ lat: latitude, lng: longitude });
-        console.log(position, "cuurent postion Geolocation position");
         setMarkers([...markers, { lat: latitude, lng: longitude }]);
       },
       (error) => {
-        console.error("Error getting current location:", error);
       }
     );
   }, []);

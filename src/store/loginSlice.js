@@ -23,12 +23,10 @@ export const loginAuth = createAsyncThunk(
   "loginAuth",
   async (dispatch) => {
     try {
-      // const state = thunkAPI.getState();
       await signInWithEmailAndPassword(auth, dispatch.email, dispatch.password);
       toast.success("Successfully Login");
       return true;
     } catch (error) {
-      console.log(error);
       toast.error("invalid Emial or password");
     }
   }

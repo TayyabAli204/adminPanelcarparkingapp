@@ -13,7 +13,6 @@ const adminSlice = createSlice({
 
   reducers: {
     setParkingSlotData: (state, action) => {
-    //   state.parkingSlots = action.payload;
     }
   },
   extraReducers:(builder)=>{
@@ -55,7 +54,6 @@ const adminSlice = createSlice({
 export const {setParkingSlotData} = adminSlice.actions;
 export const getSlotsDataAsync=createAsyncThunk('adminSlice/slotsData', async(state,thunkAPI)=>{
   const {data}=await axios.get('https://long-jade-wasp-robe.cyclic.app/parkingSlot');
-  // console.log(data)
   return data;
 })
 
@@ -69,7 +67,6 @@ try {
 
   return data ;
 } catch (error) {
-  console.log(error);
   toast.error('something went wrong')
 
 }
@@ -77,12 +74,8 @@ try {
 export const getLocationDataAsync=createAsyncThunk('adminSlice/getLocationData', async(location,thunkAPI)=>{
 
 const {data}=await axios.get(`https://long-jade-wasp-robe.cyclic.app/parkingSlot/data/${location}`)
-// console.log(data)
 return data.data ;
 })
 export default adminSlice.reducer;
 
-  // const {data}=await axios.post('http://192.168.50.65:8000/parkingSlot',
-  // );
-  // return data;
 

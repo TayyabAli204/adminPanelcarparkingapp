@@ -7,9 +7,6 @@ import { getSlotsDataAsync } from '../store/adminSlice';
 const ParkingSlots = () => {
   const { showLoader, parkingSlots } = useSelector(state => state.adminSlice);
   const dispatch = useDispatch();
-
-  console.log(parkingSlots,"akshfaasdhfkla")
-
   useEffect(() => {
     dispatch(getSlotsDataAsync());
   }, []);

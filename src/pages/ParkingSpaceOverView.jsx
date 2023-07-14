@@ -7,12 +7,6 @@ const ParkingSpaceOverView = () => {
   const availableParkingLocation = useSelector((state) => state.adminSlice);
   const dispatch = useDispatch();
 
-  // console.log(
-  //   calData.map((item) => {
-  //     console.log(item.location, "ya item ha");
-  //   }),
-  //   "Faisal Hospital Faisalabad"
-  // );
 
   useEffect(() => {
     dispatch(getSlotsDataAsync());
@@ -24,11 +18,9 @@ const ParkingSpaceOverView = () => {
         const locatinInfo = calculatedData.find(
           (dataItem) => dataItem?.location == item?.location
         );
-        // console.log(locatinInfo)
         const index = calculatedData.findIndex(
           (dataItem) => dataItem?.location === item?.location
         );
-        // console.log(index)
 
         if (locatinInfo) {
           calculatedData.splice(index, 1, {

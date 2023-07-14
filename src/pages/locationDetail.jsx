@@ -7,8 +7,6 @@ function locationDetail() {
   const { location } = useParams();
   const dispatch = useDispatch();
   const state = useSelector((state) => state.adminSlice);
-  console.log(state, "paramsss");
-  console.log(state.selectedLocation, "selectedLocation");
   useEffect(() => {
     if (location) {
       dispatch(getLocationDataAsync(location));

@@ -9,7 +9,6 @@ const AddLocation = () => {
   const [activeButton, setActiveButton] = useState(null);
   const [formData, setFormData] = useState("");
   const location = useSelector((state) => state.searchSlice.formatedAddress);
-  console.log(location, "location form slice");
   const distance = useSelector((state) => state.searchSlice.distance.lat);
   useEffect(() => {
     setFormData(location);

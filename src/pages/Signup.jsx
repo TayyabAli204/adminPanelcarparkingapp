@@ -2,7 +2,7 @@ import React from "react";
 import useSignup from "../hooks/useSignup";
 import { Link } from "react-router-dom";
 const Signup = () => {
-  const { signupUser, email, setEmail, password, setPassword } = useSignup();
+  const { signupUser, email, setEmail, password, setPassword ,displayName,setDisplayName} = useSignup();
   return (
     <div>
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -18,6 +18,7 @@ const Signup = () => {
                 Name
               </label>
               <input
+               onChange={(e) => setDisplayName(e.target.value)}
                 className="p-1 form-input block w-full mt-1 rounded-md shadow-sm bg-gray-200"
                 id="name"
                 type="text"

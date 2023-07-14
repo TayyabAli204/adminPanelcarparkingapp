@@ -1,11 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { auth, db } from '../config/firebseConfig';
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { ToastContainer, toast } from "react-toastify";
+import {  toast } from "react-toastify";
 const SignupSlice = createSlice({
   name: "Signup",
   initialState: { success: false },
-  reducers: {},
+  reducers: {
+    setName:(state,dispatch)=>{
+
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(SignupAuth.fulfilled, (state, action) => {
       state.success = action.payload;
@@ -20,7 +24,8 @@ export const SignupAuth = createAsyncThunk(
       await createUserWithEmailAndPassword(
         auth,
         dispatch.email,
-        dispatch.password
+        dispatch.password,
+        dispatch.displayName
       );
       toast.success("SignUp Successfully");
       return true;
