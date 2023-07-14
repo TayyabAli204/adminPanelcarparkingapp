@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addLocationAsync } from "../store/adminSlice";
-import { Link } from "react-router-dom";
 import SimpleMap from "../components/GoogleMap/MapHomeScreen";
 import SearchBar from "../components/searchBar/SearchBar";
 import { setDistance, setLocation } from "../store/searchSlice";

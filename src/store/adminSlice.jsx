@@ -60,7 +60,7 @@ export const getSlotsDataAsync=createAsyncThunk('adminSlice/slotsData', async(st
 
 export const addLocationAsync=createAsyncThunk('adminSlice/addLocation', async(dispatchedData,thunkAPI)=>{
 try { 
-  const data=await axios.post('http://localhost:8000/addLocation',{
+  const data=await axios.post('https://long-jade-wasp-robe.cyclic.app/addLocation',{
     location:dispatchedData
   });
   toast.success('Successfully added')
