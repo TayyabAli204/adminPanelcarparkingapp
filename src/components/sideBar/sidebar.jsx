@@ -6,9 +6,13 @@ import svg6 from "../../assets/sidebar/6.svg";
 import svg11 from "../../assets/sidebar/11.svg";
 import Nav from "../nav/nav";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(true);
   const [activeItem, setActiveItem] = useState("");
+
+  const success = useSelector((state) => state.SignupSlice.success)
+  console.log(success,"asdfasdf")
 
   const handleClick = (index) => {
     setActiveItem(index);
@@ -59,16 +63,7 @@ const Sidebar = () => {
             <path d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"></path>
           </svg>
         </button>
-        <div className="flex  justify-between ">
-          <div className="flex justify-center gap-3  items-center">
-            <img src={svg2} alt="" />
-            <div className=" ">
-              <p className="text-[18px] font-bold">Gavano</p>
-              <p className="text-[13px] text-gray-400">HR Manager</p>
-            </div>
-          </div>
-          <img src={svg3} alt="" />
-        </div>
+      
 
         <div className="py-4 overflow-y-auto font-bold text-[1.1875rem]">
           <ul className="flex flex-col gap-10">

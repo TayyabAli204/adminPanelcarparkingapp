@@ -38,9 +38,6 @@ export default ({ children }) => {
           </div>
         </div>
         <div>
-          <button className="text-white bg-[#5932EA] hover:bg-gray-700 rounded-lg py-2 px-4">
-            <Link to={"/login"}>Login</Link>
-          </button>
 
           <button
             onClick={signOutUser}

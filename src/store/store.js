@@ -1,6 +1,4 @@
 
-
-
 import { configureStore } from '@reduxjs/toolkit'
 import adminSlice from './adminSlice'
 import testSlice from './testSlice'
