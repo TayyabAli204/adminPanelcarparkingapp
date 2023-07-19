@@ -30,7 +30,7 @@ const App = () => {
           element={
             <>
               <Sidebar />
-              <div className="md:ml-[273px] !p-[25px]">
+              <div className="md:ml-[273px] md:!p-[25px] p-[12px]">
                 <Routes>
                   <Route path="/" element={<Dashboard />} />
                   <Route path="/DashBoard" element={<Dashboard />} />
