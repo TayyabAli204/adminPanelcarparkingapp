@@ -7,11 +7,9 @@ const cards = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:8000/auth/getTotalUser");
-        console.log("response", data);
+        const { data } = await axios.get("https://long-jade-wasp-robe.cyclic.app/auth/getTotalUser");
         setTotalUser(data);
       } catch (error) {
-        console.log(error);
       }
     };
   

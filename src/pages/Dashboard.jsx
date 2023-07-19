@@ -12,7 +12,6 @@ const Dashboard = () => {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log(user,'use is login');
         // return
         // setId(user.uid);
         // setSignin(true);
@@ -20,7 +19,6 @@ const Dashboard = () => {
         // setName(parts[0]);
       } else {
         navigate("/login");
-        console.log(user,'use is login');
 
       }
     });

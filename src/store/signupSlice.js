@@ -13,7 +13,6 @@ const SignupSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(SignupAuth.fulfilled, (state, action) => {
       state.success = action.payload;
-      console.log(action.payload,"done");
     });
   },
 });

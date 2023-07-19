@@ -12,7 +12,6 @@ export default ({ children }) => {
       await signOut(auth);
       toast.success("Log out Successfully");
     } catch (error) {
-      console.log(error);
       toast.error("error");
     }
   };

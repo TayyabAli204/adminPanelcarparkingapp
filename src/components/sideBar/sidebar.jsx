@@ -12,7 +12,6 @@ const Sidebar = () => {
   const [activeItem, setActiveItem] = useState("");
 
   const success = useSelector((state) => state.SignupSlice.success)
-  console.log(success,"asdfasdf")
 
   const handleClick = (index) => {
     setActiveItem(index);

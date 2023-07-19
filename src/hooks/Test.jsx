@@ -3,7 +3,6 @@ import { testThunk,testThunk1 } from '../store/testSlice'
 import { useDispatch ,useSelector} from 'react-redux'
 const Test = () => {
   const num=useSelector((state)=>state.testSlice.num)
-  console.log(num);
     const dispatch=useDispatch(8)
 
     function send(){

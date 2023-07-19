@@ -21,7 +21,6 @@ const useLogin = () => {
     e.preventDefault();
     dispatch(loginAuth({ email, password }));
 
-    console.log("functionfjkdsjfldskfl");
   };
   return { userLogin, email, setEmail, password, setPassword };
 };

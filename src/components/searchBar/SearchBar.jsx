@@ -21,18 +21,13 @@ function SearchBar() {
       const inputValue = document.getElementById("pac-input").value;
     
       // Do something with the value
-      console.log(inputValue);
       if(inputValue===''){
         dispatch(setLocation(''))
       }
     }
     function handlePlaceSelect() {
       const place = autocomplete.getPlace();
-      console.log(
-        place,
-        "place ffffffffffffffffffffffffffffffffffffffffff",
-        place.geometry?.location.lng()
-      ); // Do something with the selected place
+     
       dispatch(setLocation({ place }));
       // dispatch(setDistance(place.geometry?.location))
     }
